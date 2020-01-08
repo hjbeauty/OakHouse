@@ -1,0 +1,12 @@
+벡터의외적
+a = vector(1,2,3) 
+b = vector(-1,2,0)
+c = cross(a,b) ==> a,b를 바꾸면 방향을 반대로 만들 수 있음
+a_arr = arrow(axis = a, shaftwidth = 0.1,color=color.red ) 
+b_arr = arrow(axis = b, shaftwidth = 0.1,color=color.blue) 
+c_arr = arrow(axis = c, shaftwidth = 0.1,color=color.yellow)
+print(c)
+
+d = cross(b,a) 
+d_arr = arrow(axis = d, shaftwidth = 0.1,color=color.cyan)
+print(d)
