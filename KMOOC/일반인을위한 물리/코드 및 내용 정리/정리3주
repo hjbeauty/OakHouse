@@ -1,0 +1,51 @@
+
+문제) 등가속도 운동 구현하기 아래의 조건을 만족하는 상자의 등가속도 운동을 구현하여라.
+아래의 조건을 만족하는 상자의 등가속도 운동을 구현하여라.
+
+조건 
+1) 초기 위치는 x방향으로 –5, y방향으로 0, z방향으로 0이다. 
+2) x는 0.5, y는 0.25, z는 0.25의 크기를 갖는다. 
+3) 색은 노란색이다. 
+4) 초기 속도는 0으로 움직이지 않는다. 
+5) 초기 가속도는 x방향으로 +1 이다. 
+6) 시간간격은 0.01이다. 
+7) 전체 시간이 5초를 넘기면 종료한다.
+
+GlowScript 2.9 VPython
+
+objList = list()
+
+explosion = False
+vi = vec(0, 0, 0)
+a = vec(1, 0, 0)
+#Creating Objects
+
+
+for r in range(0, 10):
+    objList.append(box(pos = vec(-5,0,0), size=vec(0.5,0.25,0.25) , color = color.yellow, make_trail=True,  trail_type="points",interval=10))
+     
+for obj in objList:
+          obj.v=vi
+
+#time Setting
+t = 0
+dt = 0.01
+
+#Simulation Loop
+
+while t < 5000:
+    rate(1/dt)
+    
+    if t > 1 and explosion == False:
+      print("explosion!")
+      for obj in objList:
+          obj.v = a
+         
+      explosion = True 
+    
+    #Velocity and Position Update
+    for obj in objList:
+        obj.v=obj.v + a*dt
+        obj.pos = obj.pos + (obj.v * dt)
+     
+    t = t+dt
