@@ -4,7 +4,7 @@
 
 ## Spring
 
-* [Rest API](spring/untitled-1/README.md)
-  * [test1](spring/untitled-1/test1/README.md)
-    * [Untitled](spring/untitled-1/test1/untitled.md)
+* [Rest API](spring/untitled-1.md)
+* [Untitled](spring/untitled/README.md)
+  * [test1](spring/untitled/test1.md)
 
