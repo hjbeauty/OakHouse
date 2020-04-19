@@ -6,7 +6,7 @@ description: Spring Restfull
 
 ## Hello Restfull 출력하기   .
 
-RestController를 작성한  .
+RestController를 작성한    .
 
 ```java
 package com.bit.oakhouse.controller;
