@@ -1,29 +1,38 @@
 ---
-description: 어떻게 나오나
+description: Spring Restfull
 ---
 
-# Untitled
+# Rest API
 
-## Getting Super Powers
+## Hello Restfull 출력하
 
-Becoming a super hero is a fairly straight forward process:
+RestController를 작성한
 
+```java
+package com.bit.oakhouse.controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/hello")
+public class SpringRestController {
+	@RequestMapping(value = "/{name}", method = RequestMethod.GET)
+	public String hello(@PathVariable String name) {
+		String result="Hello "+name; 
+		return result;
+	}
+}
 ```
-$ give me super-powers
+
+@PathVariable : URL에서 메소드 매개변수로 값을 삽입하는데 사용된다. {name} ==&gt; String name에 대
+
+@ResponseBody : Spring3에서는 return자리에 사용했지만, Spring 4이상에서는 @RestController 만 적어주면 된
+
+```java
+@RestController = @Controller + @ResponseBody
 ```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
 
 
 
