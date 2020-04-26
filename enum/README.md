@@ -20,6 +20,8 @@ enum을 정의 하는 방법으로 연속된 데이타를 갖도록 정의하는
 
 ### [enum 장점/단점](enum-1.md)
 
+### [https://docs.oracle.com/javase/tutorial/reflect/special/enum.html](https://docs.oracle.com/javase/tutorial/reflect/special/enum.html)
+
 ## 비트 서초152기 조사자료 
 
 {% tabs %}

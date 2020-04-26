@@ -8,25 +8,19 @@
 
 3. 타입체크와 형변환을 생략할 수 있다. - 컬렉션에서 사용하는 객체는 대체로 하나의 종류만 사용한다.
 
-   
+### [Generics 클래스 사용](generics.md)
 
-enum을 정의 하는 방법으로 연속된 데이타를 갖도록 정의하는 것과 불연속데이터로 초기화를 시키는 방법이 있다.
+### [Parameterizes type](untitled.md)
 
-### [연관된 상수를 만드는 방법 - final static  ](../enum/enum_needs.md)
+### [Bounded type parameter 제한된 제네릭](untitled-1.md)
 
-### [연속 데이터 열거형 상수](../enum/undefined.md)
+### [Recursive type bound 재귀적 타입 바운드](recursive-type-bound.md)
 
-### [enum의 기본 메소드 ](../enum/enum.md)
+### [Subtyping in generics 제네릭의 서브타이](subtyping-in-generics.md)
 
-### [불연속 데이터 열거형 상수 ](../enum/undefined-1.md)
+### [와일드 카드 '?'](undefined.md)
 
-{% tabs %}
-{% tab title="First Tab" %}
-ㄹㅇㅎㄹㅇㅎㄹㅇㅎㄹㅇㅎ
-{% endtab %}
+### [제네릭 타입의 형변환](undefined-2.md)
 
-{% tab title="Second Tab" %}
-46474
-{% endtab %}
-{% endtabs %}
+## https://docs.oracle.com/javase/tutorial/java/generics/index.html
 

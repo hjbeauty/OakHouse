@@ -2,9 +2,11 @@
 
 ### 상속관계이거나 제한을 두지 않는 등의 여러 타입에 대한 대입이 가
 
-### &lt;? extends T&gt; : 와일드 카드의 상한제한, 즉, T와 sub클래스만 가능 
+###  **공변\(covariant\)** &lt;? extends T&gt; : Upper bounded wildcard, 구체적인 방향으로 타입 변환을 허용하는 것 \(자기 자신과 자식 객체만 허용\) 즉, T와 sub클래스만 가능 
 
-### &lt;? super T&gt; : 와일드 카드의 하한제한, 즉, T와 super클래스만 가능 
+###  **반공변\(contravariance\)** &lt;? super T&gt; : Lower bounded wildcard, 추상적인 방향으로의 타입 변환을 허용하는 것\(자기 자신과 부모 객체만 허용\) 즉, T와 super클래스만 가능 
+
+###  **무공변\(invariant\)** &lt;T&gt; : 오로지 자기 타입만 허용하는 것
 
 ### &lt;?&gt; , &lt;? extends  Object&gt; : 제한없음
 
