@@ -10,17 +10,17 @@
 
 ### [Generics 클래스 사용](use.md)
 
-### [Parameterizes type](untitled.md)
+### [Parameterizes type](parameterized-type.md)
 
-### [Bounded type parameter 제한된 제네릭](untitled-1.md)
+### [Bounded type parameter 제한된 제네릭](bounded-type-parameter.md)
 
 ### [Recursive type bound 재귀적 타입 바운드](recursive-type-bound.md)
 
 ### [Subtyping in generics 제네릭의 서브타이](subtyping-in-generics.md)
 
-### [와일드 카드 '?'](undefined.md)
+### [와일드 카드 '?'](wildcard.md)
 
-### [제네릭 타입의 형변환](undefined-2.md)
+### [제네릭 타입의 형변환](type-casting.md)
 
 ## [https://docs.oracle.com/javase/tutorial/java/generics/index.html](https://docs.oracle.com/javase/tutorial/java/generics/index.html)
 

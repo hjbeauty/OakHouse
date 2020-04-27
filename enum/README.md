@@ -10,15 +10,15 @@ description: 'enum이란, 서로 연관된 상수들의 집합'
 
 enum을 정의 하는 방법으로 연속된 데이타를 갖도록 정의하는 것과 불연속데이터로 초기화를 시키는 방법이 있다.
 
-### [연관된 상수를 만드는 방법 - final static  ](enum_needs.md)
+### [연관된 상수를 만드는 방법 - final static  ](final-static.md)
 
-### [연속 데이터 열거형 상수](undefined.md)
+### [연속 데이터 열거형 상수](continuity-data.md)
 
-### [enum의 기본 메소드 ](enum.md)
+### [enum의 기본 메소드 ](base-method.md)
 
-### [불연속 데이터 열거형 상수 ](undefined-1.md)
+### [불연속 데이터 열거형 상수 ](discontinuity-data.md)
 
-### [enum 장점/단점](enum-1.md)
+### [enum 장점/단점](benefits-drawbacks.md)
 
 ### [https://docs.oracle.com/javase/tutorial/reflect/special/enum.html](https://docs.oracle.com/javase/tutorial/reflect/special/enum.html)
 
