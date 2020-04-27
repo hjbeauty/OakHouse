@@ -85,8 +85,9 @@ public class CodeMap<K, V> {
 		this.key = key;
 		this.value = value;
 	}
-	public V get(K key) {
-		return value;
+	public V get(K key) throws Exception {
+		if(this.key==key) return value;
+		else throw new Exception("원하는 데이터 없다");
 	}
 //생성자 , setter , getter 
 	@Override
@@ -106,15 +107,30 @@ public class CodeMapGenericUse {
 		CodeMap<Integer, Person> codeMap = new CodeMap<Integer, Person>();
 		codeMap.put(1, p1);
 	
-		Person person = codeMap.get(2);
-		System.out.println(person);
+		Person person=null;
+		try {
+			person = codeMap.get(2);
+			System.out.println("codeMap.get(2)==>"+person);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		CodeMap<Integer, Person> codeMap2 = new CodeMap<Integer, Person>();
 		codeMap2.put(1,p1);
-		
 		System.out.println(codeMap2);
+		
+		boolean res=CodeMap.valueCompare(codeMap, codeMap2);
+		System.out.println(res);
 	}
 }
+///////////////////////////////////
+java.lang.Exception: 원하는 데이터 없다
+CodeMap [key=1, value=sample.generics.Person@6d06d69c]
+true
+	at sample.generics.CodeMap.get(CodeMap.java:12)
+	at sample.generics.CodeMapGenericUse.main(CodeMapGenericUse.java:10)
 
 ```
 
@@ -139,8 +155,9 @@ public class CodeMap<K, V> {
 		this.key = key;
 		this.value = value;
 	}
-	public V get(K key) {
-		return value;
+  public V get(K key) throws Exception {
+		if(this.key==key) return value;
+		else throw new Exception("원하는 데이터 없다");
 	}
 	public static <K,V> boolean valueCompare(CodeMap<K, V> c1,CodeMap<K, V> c2 ) {
 		return c1.key.equals(c2.key) && c1.value.equals(c2.value);
@@ -160,20 +177,26 @@ package sample.generics;
 public class CodeMapGenericUse {
 	public static void main(String[] args) {
 		Person p1=new Person("Kim123", "김말자", "서울");
-		CodeMap<Integer, Person> codeMap = new CodeMap<Integer, Person>();
-		codeMap.put(1, p1);
-	
-		Person person = codeMap.get(2);
-		System.out.println(person);
 		
-		CodeMap<Integer, Person> codeMap2 = new CodeMap<Integer, Person>();
-		codeMap2.put(1,p1);
-		System.out.println(codeMap2);
+		CodeMap<Integer, Person> codeMap = 
+				new CodeMap<Integer, Person>(1,new Person("Kim123", "김말자", "서울"));
 		
-		boolean res=CodeMap.valueCompare(codeMap, codeMap2);
-		System.out.println(res);
+		CodeMap<Integer, Person> codeMap2 = 
+				new CodeMap<Integer, Person>();
+			codeMap2.put(1, p1);
+		
+		CodeMap<Integer, Person> codeMap3 = 
+					new CodeMap<Integer, Person>(1,p1);
+				
+			boolean res=CodeMap.valueCompare(codeMap, codeMap2);
+			System.out.println(res);
+			boolean res2=CodeMap.valueCompare(codeMap3, codeMap2);
+			System.out.println(res2);
 	}
 }
+//////////////////////////
+false
+true
 
 ```
 

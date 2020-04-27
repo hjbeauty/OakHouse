@@ -22,5 +22,5 @@
 
 ### [제네릭 타입의 형변환](undefined-2.md)
 
-## https://docs.oracle.com/javase/tutorial/java/generics/index.html
+## [https://docs.oracle.com/javase/tutorial/java/generics/index.html](https://docs.oracle.com/javase/tutorial/java/generics/index.html)
 
