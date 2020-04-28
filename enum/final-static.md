@@ -12,11 +12,12 @@ description: 'enum을 다루기 전에 enum이 나오기 전에 사용했던 방
 ```java
 package sample.enumtest;
 
-public class USACoinVO {
+public final class USACoinVO {
 	   public static final int PENNY = 1;// 1 cent
      public static final int NICKLE = 5;//5 cent
      public static final int DIME = 10; //10 cent
      public static final int QUARTER = 25;//25 cent
+     private USACoinVO(){}
 }
 
 ```

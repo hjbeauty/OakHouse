@@ -22,6 +22,8 @@ enum을 정의 하는 방법으로 연속된 데이타를 갖도록 정의하는
 
 ### [https://docs.oracle.com/javase/tutorial/reflect/special/enum.html](https://docs.oracle.com/javase/tutorial/reflect/special/enum.html)
 
+###  [Java Enum Tutorial: 10 Examples of Enum in Java](https://javarevisited.blogspot.com/2011/08/enum-in-java-example-tutorial.html#ixzz6KripyhUS) 
+
 ## 비트 서초152기 조사자료 
 
 {% tabs %}
