@@ -22,5 +22,7 @@
 
 ### [제네릭 타입의 형변환](type-casting.md)
 
+### [제네릭 예](http://cafe.daum.net/OakHouse/SZKH/45)-daum cafe OakHouse
+
 ## [https://docs.oracle.com/javase/tutorial/java/generics/index.html](https://docs.oracle.com/javase/tutorial/java/generics/index.html)
 
