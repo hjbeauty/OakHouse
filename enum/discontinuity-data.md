@@ -38,7 +38,38 @@ public enum USACoins2 {
 ```
 {% endcode %}
 
-> 위 예제는 다음과 같은 뜻으로 이해하면 된다.
+사용예 
+
+> parameter 를 갖는 private 적인 생성자  와  private 한 value  멤버변수가 필요하다
+
+{% code title="DiscontinuityEnumUse.java" %}
+```java
+package sample.enumtest;
+
+public class DiscontinuityEnumUse {
+
+	public static void method(USACoins2 coin) {
+		System.out.println(coin+" : "+ coin.getValue()+"cents");
+	}
+	public static void main(String[] args) {
+		method(USACoins2.QUARTER);
+		
+	// 매핑된 값 출력
+		for(USACoins2 value : USACoins2.values()){
+		   method(value );
+		}
+	}
+}
+////////////////////////////
+QUARTER : 25cents
+PENNY : 1cents
+NICKLE : 5cents
+DIME : 10cents
+QUARTER : 25cents
+```
+{% endcode %}
+
+> 위 예제  USACoins2  는 다음  Currency 클래스와과 같은 뜻으로 이해하면 된다.
 
 ```java
 package sample.enumtest;
@@ -102,36 +133,61 @@ public class CurrencyUse {
 
 ```
 
-사용예 
+> 위 enum 스러운 예제를 약간 정리한것은 다음과 같은 실행은 CurruncyUse를 사용하면 된다.
 
-> parameter 를 갖는 private 적인 생성자  와  private 한 value  멤버변수가 필요하다
-
-{% code title="DiscontinuityEnumUse.java" %}
 ```java
 package sample.enumtest;
 
-public class DiscontinuityEnumUse {
-
-	public static void method(USACoins2 coin) {
-		System.out.println(coin+" : "+ coin.getValue()+"cents");
+public final class Currency {
+	// Currency.PENNY
+	public static final  Currency PENNY;
+	public static final  Currency QUARTER;
+	public static final Currency ENUMS$values[];
+	
+	static {
+		PENNY=new Currency("PENNY", 1);
+		QUARTER=new Currency("QUARTER", 25);
+		ENUMS$values=( new Currency[] {PENNY,QUARTER});
 	}
-	public static void main(String[] args) {
-		method(USACoins2.QUARTER);
-		
-	// 매핑된 값 출력
-		for(USACoins2 value : USACoins2.values()){
-		   method(value );
+
+	static public Currency[] values() {
+		Currency temp[];
+		int i ;
+		Currency temp2[];
+		System.arraycopy(temp=ENUMS$values, 0,
+				temp2=new Currency[i=temp.length], 0, i);
+		return temp2;
+	}
+	
+	static public int valueOf(String name) {
+		Currency[] cs= values();
+		for( Currency  c : cs  ) {
+			if(c.name.equals(name)) {
+				return c.value;
+			}
 		}
+		return 0; // 해당하는 이름이 없을 때 일단 0을 리턴하지만 ,
+		          // 예외를 발생하거나 error를 발생하는 것도 좋겠 
+	}
+	
+	public static int valueOf(Currency c) {
+		return valueOf(c.name);
+	}
+	
+	public final String name;
+	public final int value;
+	
+	private Currency(String name, int value) {
+		this.name = name;
+		this.value = value;
+	}
+	@Override
+	public String toString() {
+		return name ;
 	}
 }
-////////////////////////////
-QUARTER : 25cents
-PENNY : 1cents
-NICKLE : 5cents
-DIME : 10cents
-QUARTER : 25cents
+
 ```
-{% endcode %}
 
  추상메소드 정의한 구현부 제공     
 
