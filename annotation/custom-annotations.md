@@ -10,5 +10,7 @@
 
 ![](../.gitbook/assets/22.PNG)
 
+실행결과는?
+
 ![](../.gitbook/assets/23.PNG)
 
