@@ -1,162 +1,194 @@
 # Sort , Search
 
-### 자바에서 제공하는 lib를 사용하지 않고 만든 정렬 예제
+## [**자료구조요약**](http://cafe.daum.net/OakHouse/NZT3/28)\*\*\*\*
 
-> [ 순차정렬, 버블정렬 ..  이진 검색 \#1](http://cafe.daum.net/OakHouse/SZL4/261)
->
-> [Bubble Sort , Sequential Sort, 이진검색 \#2](http://cafe.daum.net/OakHouse/SZL4/259)
+[과제및질문30기](http://cafe.daum.net/_c21_/bbs_list?grpid=zaqT&fldid=NZT3&listnum=)**과제003\[09.10.16\]\_자료구조요약\_유준영**![](http://img1.daumcdn.net/thumb/C30x30/?fname=http://i1.daumcdn.net/cafeimg/img_profile/profile_cob.png)[유준영](javascript:)추천 0조회 10709.10.16 11:49댓글 [0](http://cafe.daum.net/_c21_/bbs_nsread?grpid=zaqT&fldid=NZT3&contentval=0000Szzzzzzzzzzzzzzzzzzzzzzzzz&datanum=28&searchlist_uri=%2F_c21_%2Fcafesearch&search_ctx=LrpNuZSucOsx.YncUoV2ej_tRpHqkOL1hFNwnK7pMwx2pUU9oYvq-CADq-lzJK_p_TYbLZznvSbg3qy8mowcMNh423a2OuJx6S98.wUXI9Eg29HccobGx.ln6dXQeDhEud6My9x_UN4NWPYs2bJFXPgh1odP.EP8KdgYsyACDmNY-Nbah8z14WrgaW8lqJaP.T.DnJZIPDs7Gp5TXzYBB9l8RJswHGQdvRKBOTdyxqiwtmyIRQasPWyz1HVvDMRzdZpDdR3wpWLcEwrqw.QRJfGQFutUtE8qjzCthFB-NstPDypNNygg9A_16ONB3mtiOUadOBnfBo_4zflMBsegsjUsbvVaCr4f#comment-btn)북마크공유하기기능 더보기
 
-> [merge sort , quick sort , insert sort , time sort 설명 및  간단예제](http://cafe.daum.net/OakHouse/SZL4/296)
->
->
->
-> >
+| 1장.자료구조 개요 1.자료의 정의  자료\(data\) : 어떤 사실이나 개념의 값들 또는 값들의 집합  자료의 구성단위 :필드,레코드,파일\(레코드의 모임\). 2.문제 풀이의 단계  자료구조: 자료는 자료 원소의 집합으로 구성되어 있으며, 자료 원소간에는 논리적인 관계가 있다. 자료 구조를 어떤 자료 구조로 구성해야 할까를 선택  연산작업: 자료구조를 만들거나 없애는 작업, 자료구조에 새로운 원소를 삽입/삭제/갱신  저장방법: 자료구조를 기억장소 내에서 물리적으로 표현한 것을 저장구조라고 하고, 한 자료구조에 대한 저장 구조는 여러 가지일수 있다  프로그램 언어: 프로그램 언어에 따라 선택된 자료 구조가 제공 되지 않을 수가 있음 3.자료구조-컴퓨터가 초기에는 주로 수치적인 문제를 풀기 위해 사용되었으나, 점차 비수치적인 문제를 해결하기 위해 더 많이 사용한다.  수치적인 문제 해결   : 정수, 실수, 배열  비수치적인 문제 해결 : 구조체, 포인터, 등 4.알고리즘  4.1.알고리즘 정의   알고리즘-특정한 문제를 풀기 위해 정해진 일련의 명령 ,컴퓨터에 의해 수행 될수 있고, 프로그램 작성이 가능하여야함.   프로그램-추상적인 형태로 표현한 알고리즘을 컴퓨터가 수행 할수 잇도록 구체적인 형태로 표현한 것   알고리즘의 조건-명확성,유한성,유효성,정확성  4.2.알고리즘과 자료구조의 관계-주어진 문제에서 수행될 연산작업의 유형을 고찰하고 이러한 작업들이 효과적으로 수행될 수 있도록 자료를 표현  -&gt;자료에 대한 기본 연산으로 초기화,소멸,조회,순회,삽입,삭제,탐색,정렬,합병이 있다.  4.3.알고리즘의 기술방법-자연언어 방법,흐름도 방법,알고리즘 언어 방법,특성 프로그램 언어 방법 5.프로그램의 기본 제어 구조  5.1.제어구조의 기본 4가지-순차구조,선택구조,반복구조,건너뜀 구조 \(프로그램의 제어구조는 입구와 출구가 하나여야 함\)  5.2.선택구조-if구조,switch구조  5.3.반복구조-while구조,for구조,do-while구조   -&gt;for가 세 구조중에 가장 분명한 구조이므로 가장 먼저 고려하고,반복 실행하기전에 반복 조건을 검사해야한다면 while 구조가 적절하다.  5.4.건너뜀구조-break문,continue문,goto문\(거의사용하지 않음\) 6.순환구조  6.1.순환함수-어떤함수가 자기자신을 직접 호출 할 때의 함수   -&gt;순환함수가 무한정 수행되지 않기 위해서는 자신을 호출하지 않고 함수의 값이 정의되는 경우가 있어야 하고, 자신을 호출할 때 전달하는 인자는 현재 주어진 인자보다 작아하며 호출할 때마다 base case에 가까워져야한다.   -&gt;피보나치 수열-Fibonacci 함수는 잘 정의된 함수로 이유는 n=1, n=2 일때 자신을 호출하지 않고 함수 값이 주어지며,  F\(n\)은 n 보다 적을 값으로 정의되고 , 호출될 때마다 n=1에 가까워지기 때문이다.    |
+| :--- |
 
-#### merge sort
 
-* merge sort는 O\(n log n\) 비교 기반 정렬 알고리즘이다. 분할 정복 알고리즘의 하나이다. 존 폰 노이만이 1945년에 개발했다.
-  1. 리스트의 길이가 0 또는 1이면 이미 정렬된 것으로 본다. 그렇지 않은 경우에는
-  2. 정렬되지 않은 리스트를 절반으로 잘라 비슷한 크기의 두 부분 리스트로 나눈다.
-  3. 각 부분 리스트를 재귀적으로 합병 정렬을 이용해 정렬한 두 부분 리스트를 다시 하나의 정렬된 리스트로 합병한다.
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">
+        <p>2&#xC7A5;.&#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC791;&#xC131;
+          <br />1.&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC791;&#xC131; &#xAE30;&#xBC95;
+          <br
+          />1.1.&#xAD6C;&#xC870;&#xD654; &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC791;&#xC131;-goto
+          &#xBB38; &#xC5C6;&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC791;&#xC131;,
+          &#xBAA8;&#xB4C8;&#xD654; &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC791;&#xC131;,&#xD558;&#xD5A5;&#xC2DD;
+          &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC791;&#xC131;
+          <br />1.2.&#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB7A8;
+          &#xC791;&#xC131;
+          <br />-&#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xC791;&#xC131;&#xC758; &#xC0DD;&#xC0B0;&#xC131;&#xC744;
+          &#xD5A5;&#xC0C1;&#xC2DC;&#xD0A4;&#xAE30; &#xC704;&#xD55C; &#xAE30;&#xBC95;&#xC784;
+          <br
+          />-&#xAD6C;&#xC870;&#xD654; &#xAE30;&#xBC95;&#xC5D0;&#xC11C;&#xB294; &#xBAA8;&#xB4C8;&#xC774;
+          &#xD568;&#xC218; &#xC911;&#xC2EC;&#xC774;&#xACE0;, &#xC790;&#xB8CC;&#xB294;
+          &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C;&#xB2E4;&#xB294;
+          &#xBD80;&#xCC28;&#xC801;&#xC778; &#xC5ED;&#xD65C;&#xC784;
+          <br />-&#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5; &#xAE30;&#xBC95;&#xC5D0;&#xC11C; &#xBAA8;&#xB4C8;&#xC740;
+          &#xC790;&#xB8CC; &#xC911;&#xC2EC;&#xC774;&#xACE0; &#xD568;&#xC218;&#xB294;
+          &#xC774; &#xC790;&#xB8CC;&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xB294;
+          &#xBD80;&#xCC28;&#xC801;&#xC778; &#xC5ED;&#xD65C;&#xC784;
+          <br />-&#xC790;&#xB8CC;&#xB97C; &#xBAA8;&#xB4C8; &#xC911;&#xC2EC;&#xC73C;&#xB85C;
+          &#xD558;&#xACE0;, &#xC774;&#xC790;&#xB8CC;&#xC640; &#xADF8; &#xC678; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xAC04;&#xC758;
+          &#xC0C1;&#xD638; &#xC791;&#xC6A9;&#xC744; &#xCC98;&#xB9AC;&#xD574;&#xC904;
+          &#xD568;&#xC218;&#xB97C; &#xC774; &#xC790;&#xB8CC;&#xC5D0; &#xBD99;&#xC5EC;&#xC11C;
+          &#xD55C; &#xAD6C;&#xC870;&#xB85C; &#xB9CC;&#xB4E0; &#xAC83;&#xC774; &#xD074;&#xB798;&#xC2A4;&#xC774;&#xB2E4;.
+          <br
+          />2.&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xC678;&#xD615;-&#xC77D;&#xAE30;&#xC27D;&#xACE0;,
+          &#xACC4;&#xC0B0;&#xC2DC;&#xAC04; &#xC9E7;&#xACE0;, &#xD504;&#xB85C;&#xADF8;&#xB7A8;
+          &#xC678;&#xD615;&#xC740; &#xC77C;&#xAD00;&#xC131;&#xC788;&#xAC8C; &#xC720;&#xC9C0;&#xD55C;&#xB2E4;.
+          <br
+          />3.&#xD504;&#xB85C;&#xADF8;&#xB7A8;
+          <br />3.1.&#xAD6C;&#xBB38;&#xC624;&#xB958; (syntax error) : &#xC791;&#xC131;&#xB41C;
+          &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC774; &#xCEF4;&#xD4E8;&#xD130; &#xC5B8;&#xC5B4;&#xC758;
+          &#xADDC;&#xCE59;&#xC5D0; &#xC5B4;&#xAE0B;&#xB0A0; &#xB54C; &#xB098;&#xD0C0;&#xB098;&#xB294;
+          &#xC624;&#xB958;
+          <br />3.2.&#xB17C;&#xB9AC; &#xC624;&#xB958; (logic error) : &#xC131;&#xACF5;&#xC801;&#xC73C;&#xB85C;
+          &#xCEF4;&#xD30C;&#xC77C;&#xB41C; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC774;
+          &#xC2E4;&#xC2DC;&#xB420; &#xB54C; &#xB098;&#xD0C0;&#xB098;&#xB294; &#xC624;&#xB958;</p>
+        <p></p>
+      </th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
+    <tr>
+      <th style="text-align:left">
+        <p>3&#xC7A5;.&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xD6A8;&#xC728;&#xC131;(&#xCEF4;&#xD30C;&#xC77C;&#xBC29;&#xC2DD;)
+          <br
+          />1.&#xAE30;&#xBCF8;&#xAC1C;&#xB150;-&#xD6A8;&#xC728;&#xC131;&#xBA74;&#xC5D0;&#xC11C;
+          &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xACC4;&#xC0B0;&#xC18D;&#xB3C4;&#xAC00;
+          &#xD5A5;&#xC0C1;&#xB418;&#xB098; &#xC2E4;&#xC2DC;&#xAC04; &#xCC98;&#xB9AC;&#xC5D0;&#xC11C;
+          &#xBB38;&#xC81C;
+          <br />2.&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xACC4;&#xC0B0;&#xC2DC;&#xAC04;
+          &#xCE21;&#xC815;
+          <br />2.1.&#xCE21;&#xC815;&#xB0B4;&#xC6A9;
+          <br />-&#xACC4;&#xC0B0; &#xC2DC;&#xAC04;&#xC740; &#xC790;&#xB8CC;&#xD615;&#xC5D0;
+          &#xB530;&#xB77C; &#xC5F0;&#xC0B0; &#xC2DC;&#xAC04;&#xC774; &#xB2E4;&#xB984;
+          ( &#xC815;&#xC218;&#xD615; &lt; &#xBD80;&#xB3D9;&#xC18C;&#xC218;&#xC810;&#xD615;)
+          <br
+          />-&#xAC19;&#xC740; &#xC790;&#xB8CC;&#xD615;&#xB3C4; &#xC5F0;&#xC0B0; &#xC885;&#xB958;&#xC5D0;
+          &#xB530;&#xB77C; &#xC5F0;&#xC0B0; &#xC2DC;&#xAC04;&#xC774; &#xB2E4;&#xB984;(+,
+          - &lt; * /)
+          <br />-&#xC8FC;&#xC18C; &#xC5F0;&#xC0B0;&#xC790;&#xC640; &#xAD6C;&#xC870;&#xCCB4;
+          &#xBA64;&#xBC84; &#xC5F0;&#xC0B0;&#xC740; &#xC2DC;&#xAC04;&#xC774; &#xC18C;&#xC694;
+          &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.
+          <br />-&#xCEF4;&#xD4E8;&#xD130;&#xC5D0; &#xB530;&#xB77C; &#xC5F0;&#xC0B0; &#xC2DC;&#xAC04;&#xC774;
+          &#xB2E4;&#xB974;&#xB2E4;.
+          <br />-register &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC18D;&#xB3C4;&#xAC00; &#xD5A5;&#xC0C1;&#xB41C;&#xB2E4;.
+          <br
+          />-2&#xCC28;&#xC6D0; &#xBC30;&#xC5F4; &#xBCF4;&#xB2E4;&#xB3C4; 1&#xCC28;&#xC6D0;
+          &#xBC30;&#xC5F4;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098; &#xD3EC;&#xC778;&#xD130;
+          &#xC0AC;&#xC6A9;&#xC740; &#xACC4;&#xC0B0; &#xC2DC;&#xAC04;&#xC744; &#xB2E8;&#xCD95;&#xC2DC;&#xD0A8;&#xB2E4;.
+          <br
+          />2.2.profiler&#xC0AC;&#xC6A9;- profiler&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758;
+          &#xC2E4;&#xD589;&#xC2DC;&#xAC04;&#xC744; &#xBD84;&#xC11D;&#xD574;&#xC8FC;&#xB294;
+          &#xB3C4;&#xAD6C;
+          <br />3.&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xD6A8;&#xC728;&#xD654; &#xBC29;&#xBC95;-
+          &#xBE60;&#xB978; &#xAE30;&#xACC4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098;
+          &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xCD5C;&#xC801;&#xD654;&#xB97C;
+          &#xC2DC;&#xD0A8;&#xB2E4;.</p>
+        <p></p>
+      </th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
+    <tr>
+      <th style="text-align:left">
+        <p>4&#xC7A5;.&#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC758; &#xBD84;&#xC11D;
+          <br
+          />1.&#xC54C;&#xACE0;&#xB9AC;&#xC998; &#xBD84;&#xC11D;&#xC758; &#xD544;&#xC694;&#xC131;
+          <br
+          />1.1.&#xC54C;&#xACE0;&#xB9AC;&#xC998; &#xBD84;&#xC11D;&#xC758; &#xAE30;&#xC900;-&#xC18C;&#xC694;&#xACC4;&#xC0B0;
+          &#xC2DC;&#xAC04;,&#xAE30;&#xC5B5;&#xC7A5;&#xC18C; &#xC0AC;&#xC6A9;&#xB7C9;,&#xC815;&#xD655;&#xC131;,&#xAC04;&#xACB0;&#xC131;
+          <br
+          />1.2.&#xC18C;&#xC694;&#xACC4;&#xC0B0; &#xC2DC;&#xAC04;&#xACFC; &#xAE30;&#xC5B5;&#xC7A5;&#xC18C;
+          &#xC0AC;&#xC6A9;&#xB7C9;&#xC774; &#xC911;&#xC694;&#xD55C; &#xC774;&#xC720;
+          <br
+          />-&#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC774; &#xD544;&#xC694;&#xB85C;&#xD558;&#xB294;
+          &#xCEF4;&#xD4E8;&#xD130;&#xC758; &#xAE30;&#xC5B5;&#xC6A9;&#xB7C9;&#xACFC;
+          &#xACC4;&#xC0B0;&#xC2DC;&#xAC04;&#xC758; &#xCD94;&#xC815;&#xCE58;&#xB098;
+          &#xCD5C;&#xB300;&#xCE58;&#xB97C; &#xC54C; &#xC218; &#xC788;&#xC74C;.
+          <br
+          />2.&#xACC4;&#xC0B0;&#xB7C9;
+          <br />2.1.&#xACC4;&#xC0B0;&#xB7C9;&#xC758; &#xCE21;&#xC815; &#xBC29;&#xBC95;
+          <br
+          />-&#xCEF4;&#xD4E8;&#xD130; &#xAE30;&#xC885;&#xC774;&#xB098;,&#xD504;&#xB85C;&#xADF8;&#xB7A8;
+          &#xC5B8;&#xC5B4;&#xC640;, &#xAE30;&#xD0C0; &#xADC0;&#xCC2E;&#xC740; &#xC791;&#xC5C5;&#xB54C;&#xBB38;&#xC5D0;
+          &#xCEF4;&#xD4E8;&#xD130; &#xC2E4;&#xD589;&#xC2DC;&#xAC04;&#xC740; &#xACC4;&#xC0B0;&#xB7C9;&#xC73C;&#xB85C;
+          &#xC4F0;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.
+          <br />-&#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC5D0;&#xC11C; &#xAE30;&#xBCF8;&#xC5F0;&#xC0B0;
+          &#xC2E4;&#xD589;&#xD69F;&#xC218;&#xB97C; &#xACC4;&#xC0B0;&#xD558;&#xACE0;,
+          &#xAE30;&#xBCF8; &#xC5F0;&#xC0B0;&#xC774; &#xB2E4;&#xB97C;&#xACBD;&#xC6B0;
+          &#xC2E4;&#xD589; &#xD69F;&#xC218;&#xC5D0; &#xAC00;&#xC911;&#xCE58;&#xB97C;
+          &#xC918;&#xC11C; &#xC0C1;&#xB300;&#xC801; &#xACC4;&#xC0B0;&#xB7C9;&#xC744;
+          &#xAD6C;&#xD55C;&#xB2E4;.
+          <br />2.2.&#xACC4;&#xC0B0;&#xB7C9;&#xC758; &#xD45C;&#xD604;
+          <br />-&#xACC4;&#xC0B0;&#xB7C9;&#xC740; &#xC0C1;&#xC218;&#xB85C; &#xD45C;&#xD604;
+          &#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC774;&#xC720; - &#xAE30;&#xBCF8; &#xC5F0;&#xC0B0;&#xC758;
+          &#xD69F;&#xC218;&#xAC00; &#xC785;&#xB825;&#xC5D0; &#xB530;&#xB77C; &#xC88C;&#xC6B0;&#xB428;,&#xC785;&#xB825;&#xC758;
+          &#xD06C;&#xAE30;&#xAC00; &#xAC19;&#xB354;&#xB77C;&#xB3C4; &#xC785;&#xB825;
+          &#xC0C1;&#xD0DC;&#xC5D0; &#xB530;&#xB77C; &#xACC4;&#xC0B0;&#xB7C9;&#xC774;
+          &#xD2C0;&#xB9BC;.
+          <br />-&#xCD5C;&#xC545;&#xC758; &#xACC4;&#xC0B0;&#xB7C9; - &#xC218;&#xD589;&#xD560;
+          &#xACC4;&#xC0B0;&#xB7C9;&#xC758; &#xC0C1;&#xD55C;&#xCE58;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xACE0;,&#xB300;&#xBD80;&#xBD84;&#xC758;
+          &#xACBD;&#xC6B0; &#xCD5C;&#xC545;&#xC758; &#xACC4;&#xC0B0;&#xB7C9;&#xC744;
+          &#xC0AC;&#xC6A9;&#xD558;&#xBA70;,&#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC758;
+          &#xACC4;&#xC0B0;&#xB7C9;&#xC774;&#xB77C;&#xACE0; &#xD558;&#xBA74;, &#xCD5C;&#xC545;&#xC758;
+          &#xACC4;&#xC0B0;&#xB7C9;&#xC744; &#xB73B;&#xD55C;&#xB2E4;.
+          <br />-&#xCD5C;&#xC120;&#xC758; &#xACC4;&#xC0B0;&#xB7C9;(B(n)), &#xD3C9;&#xADE0;&#xACC4;&#xC0B0;&#xB7C9;(A(n))
+          <br
+          />2.3.&#xACC4;&#xC0B0;&#xB7C9;&#xC758; &#xCC28;&#xC218;
+          <br />-&#xC9C0;&#xC218;&#xD615; &#xC54C;&#xACE0;&#xB9AC;&#xC998;(exponential
+          algorithm) : &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC758; &#xC2E4;&#xD589;
+          &#xC2DC;&#xAC04;(&#xACC4;&#xC0B0;&#xB7C9;)&#xC774; &#xC9C0;&#xC218;&#xD615;&#xC73C;&#xB85C;
+          &#xD45C;&#xD604;
+          <br />-&#xB2E4;&#xD56D;&#xC2DD; &#xC54C;&#xACE0;&#xB9AC;&#xC998;(polynomial
+          algorithm) : &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC758; &#xC2E4;&#xD589;
+          &#xC2DC;&#xAC04;(&#xACC4;&#xC0B0;&#xB7C9;)&#xC774; &#xB2E4;&#xD56D;&#xC2DD;&#xC73C;&#xB85C;
+          &#xD45C;&#xD604;
+          <br />3.&#xAE30;&#xC5B5;&#xC7A5;&#xC18C; &#xC0AC;&#xC6A9;&#xB7C9;-&#xAE30;&#xC5B5;&#xC7A5;&#xC18C;
+          &#xC0AC;&#xC6A9;&#xB7C9; &#xBD84;&#xC11D;&#xC740; &#xACC4;&#xC0B0;&#xB7C9;
+          &#xBD84;&#xC11D;&#xBCF4;&#xB2E4; &#xC27D;&#xB2E4;. &#xAE30;&#xC5B5;&#xC7A5;&#xC18C;
+          &#xC0AC;&#xC6A9;&#xB7C9;&#xACFC; &#xACC4;&#xC0B0;&#xB7C9;&#xC758; &#xAD00;&#xACC4;&#xB294;
+          trade-off&#xAD00;&#xACC4;&#xC774;&#xB2E4;.
+          <br />4.&#xC815;&#xD655;&#xC131;-&#xBCF5;&#xC7A1;&#xD55C; &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC77C;
+          &#xACBD;&#xC6B0;, &#xC791;&#xC740; &#xBD80;&#xBD84;&#xC73C;&#xB85C; &#xBD84;&#xD560;&#xD558;&#xC5EC;,
+          &#xAC01; &#xBD80;&#xBD84;&#xC774; &#xBAA8;&#xB450; &#xC815;&#xD655;&#xD558;&#xB2E4;&#xB294;
+          &#xAC83;&#xC744; &#xC99D;&#xBA85;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xC804;&#xCCB4;
+          &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC774; &#xC810;&#xD655;&#xD558;&#xB2E4;&#xB294;
+          &#xAC83;&#xC744; &#xC99D;&#xBA85;&#xD55C;&#xB2E4;.
+          <br />5.&#xAC04;&#xACB0;&#xC131;-&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758; &#xC815;&#xD655;&#xC131;&#xC744;
+          &#xC27D;&#xAC8C; &#xC99D;&#xBA85;&#xD560; &#xC218; &#xC788;&#xACE0;, &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC758;
+          &#xC218;&#xC815; &#xC791;&#xC5C5;&#xC744; &#xC27D;&#xAC8C; &#xD560;&#xC218;
+          &#xC788;&#xB2E4;.</p>
+        <p></p>
+      </th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
 
-top-down 방식 코드
+| 5장.정수,실수 문자 1.정수-소수점이 없는 일반 수 \(음수는 2의 보수를 사용한다\) 2.실수-소수점이 있는 수 \(전체 부호,가수,지수 부호, 지수로 구성\) 3,문자-문자가 기억장소에 저장되는 단위는 byte,문자를 이진수로 표현하기 위해 ASCII와 EBCDIC를 사용한다. |
+| :--- |
 
-```text
 
-// Array A[] has the items to sort; array B[] is a work array.
-TopDownMergeSort(A[], B[], n)
-{
-    CopyArray(A, 0, n, B);           // duplicate array A[] into B[]
-    TopDownSplitMerge(B, 0, n, A);   // sort data from B[] into A[]
-}
+| 6장.배열,구조체,포인터 1.배열  1.1.배열의 저장방법   -일차원 배열의 저장 방법:기억장소에 저장되는 물리적인 순서를 논리적 순서와 같도록 저장함. 원소 a\[i+1\]의 저장 장소가 a\[i\] 저장 장소에 바로 인접   -다차원 배열의 저장 방법:행우선 순서 \(row major order\) 방법 ,열우선 순서 \(column major order\) 방법  1.2.배열의 연산   -배열의 저장순서를 고려하여 인접한 원소를 차례로 처리하는 것이 효율적임.   -삽입/삭제 연산의 횟수가 많다면 배열은 효율적인 자료 구조가아님.  1.3.희소 배열   -희소 배열 배열의 원소값이 0인 원소가 비교적 많은 배열   -희소 배열을 표현하기 위해서 배열 값이 0이 아닌 원소만 저장하는 방법이 필요 2.구조체  2.1.정의-논리적으로 서로 관련된 자료들을 집단화한 자료구조, 구조체와 멤버를 레코드\(record\)와 필드\(field\)라 부름.  2.2.구조체의 저장 방법-구조체의 첫 맴버가 첫 위치에 저장되고, 마지막 멤버가 마지막 위치에 저장된다. 3.포인터  3.1.포인터와 배열- a 는 a\[0\]를 가르키는 포인터이다.. a가 주소 값이므로 a는 변수가 아니고 상수이다.  3.2.동적 기억장소 할당- 실행시간에 기억장소를 할당하는 것이며, C에서는 malloc\(\)를 사용, C++에서는 new라는 연산자를 사용한다. |
+| :--- |
 
-// Sort the given run of array A[] using array B[] as a source.
-// iBegin is inclusive; iEnd is exclusive (A[iEnd] is not in the set).
-TopDownSplitMerge(B[], iBegin, iEnd, A[])
-{
-    if(iEnd - iBegin < 2)                       // if run size == 1
-        return;                                 //   consider it sorted
-    // split the run longer than 1 item into halves
-    iMiddle = (iEnd + iBegin) / 2;              // iMiddle = mid point
-    // recursively sort both runs from array A[] into B[]
-    TopDownSplitMerge(A, iBegin,  iMiddle, B);  // sort the left  run
-    TopDownSplitMerge(A, iMiddle,    iEnd, B);  // sort the right run
-    // merge the resulting runs from array B[] into A[]
-    TopDownMerge(B, iBegin, iMiddle, iEnd, A);
-}
 
-//  Left source half is A[ iBegin:iMiddle-1].
-// Right source half is A[iMiddle:iEnd-1   ].
-// Result is            B[ iBegin:iEnd-1   ].
-TopDownMerge(A[], iBegin, iMiddle, iEnd, B[])
-{
-    i = iBegin, j = iMiddle;
+| 7장.정렬,탐색 1.정렬  1.1.선택정렬   -기초적인 정렬 알고리즘의 하나로 전체 원소들 중에서 기준 위치에 맞는 원소를 선택하여 자리를 교환하는 방식으로 정렬한다.   -메모리의 사용공간은 n개의 원소에 대해 n개의 메모리를 사용하고, 시간복잡도는 O\(n^2\)이다.  1.2.삽입정렬   -정렬되지 않은 리스트의 한 원소씩을 정렬된 리스트에 제 위치를 찾아 삽입한다.   -카드를 한 장씩 돌려받을 때 손에 이미 정렬되어 있는 카드 속에 새 카드를 삽입하는 방법이다.  1.3.버블정렬   -바로 인접해 있는 두 개의 원소를 비교하여 순서가 바뀌어 있으면 서로 위치를 바꾸어 작은 값의 원소를 배열의 위쪽에 오게 하고 큰값의 원소를 아래쪽으로 가도록 하는 것이다.   -각 pass 가 끝나면 큰 값의 원소가 제 위치로 가게된다.  1.4.쉘정렬   -버블정렬에서 자료의 위치가 정렬된 위치에서 멀리 떨어져 있다면 여러번 교환이 필요하기 때문에, 멀리 떨어져 있는 원소끼리 비교 교환하도록 함.  1.5.합병 정렬   -정렬된 배열의 합병:각 배열의 원소를 순차적으로 비교하여 작은 값을 별도의 배열에 출력   -합병 정렬- 원 합병을 일반화 하여 임의의 m 개 부분 리스트를 합병\(다중 합병, m-원 합병정렬\)  1.6.퀵정렬   -가장 효율적인 방법으로 세 단계로 수행된다.    -&gt; 한 패스 동안 임의의 원소를 선정한다. \( pivot 원소\)    -&gt; 이 원소를 기준으로 전체를 두 부분리스트로 분할한다.\(pivot 값을 기준으로 값이 큰 원소와 값이 적은 리스트로 분류\)    -&gt; 각 부분 리스에 대하여 단계 2를 반복 수행한다.  1.7.보조테이블을 사용한 정렬   -보조 테이블에는 레코드 번호\(레코드 인덱스\)를 저장하고, 실제 데이터를 정렬하는 대신 보조테이블의 레코드 번호를 정렬한다. 2.탐색  2.1.선형 탐색   -탐색하고자 하는 자료와 배열의 원소를 하나씩 순차적으로 비교한다.  2.2.이진 탐색   -일반적으로 사전에 단어를 찾는 방법과 비슷하다.   -배열의 원소가 정렬되어야 한다.   -배열의 중앙 원소를 찾아 값을 비교한 후, 비교 결과에 따라 중앙의 앞 혹은 뒷 부분을 이전과 동일 하게 검색하는 방법이다.   -이진 탐색은 배열에서 자료 원소의 삽입이나 삭제가 거의 없는 경우에 적합  2.3.인덱스 순차 탐색   -정렬된 배열에서 탐색하는 방법으로, 배열의 구간 정보를 가지는 인덱스 테이블을 구축하여 탐색한다.   -이진 탐색보다 탐색 구간을 줄일수 있다.   -인덱스 테이블이 커지면 이차 보조 인덱스 테이블을 구축할 수 있다. |
+| :--- |
 
-    // While there are elements in the left or right runs...
-    for (k = iBegin; k < iEnd; k++) {
-        // If left run head exists and is <= existing right run head.
-        if (i < iMiddle && (j >= iEnd || A[i] <= A[j])) {
-            B[k] = A[i];
-            i = i + 1;
-        } else {
-            B[k] = A[j];
-            j = j + 1;
-        }
-    }
-}
 
-CopyArray(A[], iBegin, iEnd, B[])
-{
-    for(k = iBegin; k < iEnd; k++)
-        B[k] = A[k];
-}
-
-```
-
-#### quick sort
-
-* Quicksort는 다른 원소와의 비교만으로 정렬을 수행하는 비교 정렬의 일종이다. 퀵 정렬의 복잡도는 최악의 경우 O\(n^2\)이고, 평균적으로 O\(n log n\)이다. 퀵 정렬은 분할 정복\(divide and conquer\) 방법을 통해 리스트를 정렬한다.
-  1. 리스트 가운데서 하나의 원소를 고른다. 이렇게 고른 원소를 피벗이라고 한다.
-  2. 리스트 가운데서 하나의 원소를 고른다. 이렇게 고른 원소를 피벗이라고 한다.
-  3. 분할된 두 개의 작은 리스트에 대해 재귀\(Recursion\)적으로 이 과정을 반복한다. 재귀는 리스트의 크기가 0이나 1이 될 때까지 반복된다.
-
-```text
-public void quickSort(int[] arr, int left, int right) {
-    int i, j, pivot, tmp;
-    if (left < right) {
-        i = left;   j = right;
-        pivot = arr[(left+right)/2];
-        //분할 과정
-        while (i < j) {
-            while (arr[j] > pivot) j--;
-            // 이 부분에서 arr[j-1]에 접근해서 익셉션 발생가능함.
-            while (i < j && arr[i] <= pivot) i++;
-
-            tmp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = tmp;
-        }
-        //정렬 과정
-        quickSort(arr, left, i - 1);
-        quickSort(arr, i + 1, right);
-    }
-}
-```
-
-#### insert sort
-
-* 삽입 정렬\(揷入整列, insertion sort\)은 자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘이다.
-* k번째 반복 후의 결과 배열은, 앞쪽 k + 1 항목이 정렬된 상태이다. 각 반복에서 정렬되지 않은 나머지 부분 중 첫 번째 항목은 제거되어 정확한 위치에 삽입된다.
-* 배열이 길어질수록 효율이 떨어지지만, 구현이 간단하다는 장점이 있다. 선택 정렬이나 거품 정렬에 비교하여 빠르며, 안정 정렬이고 in-place 알고리즘이다.
-
-```text
-void insertionSort(int[] arr)
-{
-
-   for(int index = 1 ; index < arr.length ; index++){
-
-      int temp = arr[index];
-      int aux = index - 1;
-
-      while( (aux >= 0) && ( arr[aux] > temp ) ) {
-
-         arr[aux+1] = arr[aux];
-         aux--;
-      }
-      arr[aux + 1] = temp;
-   }
-}
-```
-
-#### tim sort
-
-* Merge sort 와 Insert sort 를 혼용한 것으로, 현실 세계에 있는 데이터가 랜덤하게 흩어진 형태 보다 대략 정렬된 상태로 있다는 것에 기반하여 디자인된 알고리즘이다.
-* Merge sort의 최악 시간 복잡도와, Insert Sort의 최고 시간 복잡도를 갖고 가게 되므로, 정렬의 시간 복잡도를 O\(n\) ~ O\(n log n\) 사이를 보장한다는 점이다.
-* 자바에서 JDK7 이후부터 객체들의 기본 정렬 알고리즘으로 적용되었다.
-  1. 데이터의 처음부터 검색하여, 연속성이 있는 부분들을 run이라는 단위로 분류
-  2. 연속성이 전혀 없는 random한 데이터들은 minrun이라는 단위로 분류되고, insert sort를 수행해 run으로 만듬
-  3. stack에 run을 쌓고, 위쪽 run들이 더 짧은 경우 위쪽 run들에 merge sort를 수행하여 위로갈수록 큰 run으로 만들기를 반복한다
-
-##  Super Powers
-
-Becoming a super hero is a fairly straight forward process:
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
-
+| 8장.스택,큐,리스트,트리,해싱 1.스택  1.1.정의-"스택"이란 여러 개의 데이타 항목들이 일정한 순서로 나열된 자료 구조로, 한쪽 끝에서만 새로운 항목을 삽입하거나 기존 항목을 삭제할 수 있도록 고안된 것이다.  1.2.구조   -스택은 기저\(base\)로부터 데이타 항목들을 차례로 쌓아올린 모양을 가진다.   -삽입과 삭제는 현재 저장된 최상위 항목이 위치한 top 에서만 일어난다.   -top 위치는 "스택 포인터"라는 지시자가 가리킨다.   -스택 포인터는 스택 기저에서 시작하여 항목이 삽입되면 하나 증가하고, 삭제되면 하나 감소한다.   -스택에는 한계가 있어서 그 한계를 초과하도록 삽입할 수 없다.  1.3.스택에 데이타 항목 삽입 \(push\)   -데이타 항목을 삽입하려면 스택 포인터를 하나만큼 증가시켜 주고 스택의 top 에 데이타 항목을 저장한다.   -데이타 항목을 삽입하기 전에 새로운 항목을 저장할 빈 공간이 있는지 검사\(Full검사\)해야 한다.  1.4.Full검사   -스택이 가득차 있으면 새로운 데이타 항목을 삽입할 수 없다. 데이타 항목을 삽입하기 전에 먼저, 스택 포인터가 스택의 한계에 도달해 있는지 검사해야 한다  1.5.스택에서 데이타 항목 삭제 \(pop\)   -데이타 항목을 삭제하려면 스택의 top 에 있는 데이타 항목을 제거하고 스택 포인터를 하나만큼 감소시켜 준다.   -데이타 항목을 삭제하기 전에 스택이 비어있는지를 검사\(Empty검사\)해야 한다.  1.6.Empty 검사   -스택이 비어 있으면, 데이타 항목을 삭제할 수 없다. 데이타 항목을 삭제하기 전에 스택 포인터가 기저에 도달해 있는지를 검사해야 한다. 2.큐  2.1.정의-"큐"는 여러 개의 데이타 항목들이 일정한 순서로 나열된 자료 구조이다. 스택과는 달리 한쪽 끝에서는 삽입만 할 수 있고, 삭제는 반대쪽 끝에서만 할 수 있도록 되어 있다.  2.2.종류-큐에는 한 방향으로 데이타 항목들이 삽입/삭제되는 선형 큐와 시작점과 끝점이 서로 연결되어 있는 환형 큐가 있다.   2.2.1.선형큐    -데이타 항목을 삽입하려면 큐의 rear 포인터를 하나만큼 증가시켜 주고 그 위치에 데이타 항목을 저장한다.    -데이타 항목을 삭제하려면 큐의 front 포인터를 하나만큼 증가시키고 그 위치에 있는 데이타 항목을 삭제한다.    -삽입이 계속되어 rear 포인터가 상한에 도달하면 더이상 삽입이 불가능한 상태가 된다.   2.2.2.환형큐    -삽입과 삭제 동작은 선형 큐와 같지만, 큐의 상한과 하한이 서로 연결된 고리 모양을 하고 있어, 사실상 큐의 한계가 없는 것과 같다.    -환형 큐를 이용하면 rear 포인터가 상한에 도달하여 삽입이 중단되는 문제를 해결할 수는 있지만 큐의 용량을 초과하여 데이타 항목을 삽입할 수는 없다.    -front 포인터와 rear 포인터가 같은 경우를 큐 full 과 큐 empty 조건으로 사용하면 두 가지 경우를 구별할 수 없다.이것을 구별하기 위해 하나의 여유 공간을 두고 그 공간은 사용하지 못하도록 한다. 3.리스트  3.1.정의-연결 리스트는 일정한 순서를 가지는 데이타 항목들을 표현하는 방법중의 하나이다. 배열과 같은 순차적 표현 방법과는 달리 데이타 항목들의 논리적인 순서만 유지되고 기억장소내에서는 각 항목들의 임의의 위치를 가지도록 하는 자료구조이다.  3.2.구조-연결 리스트에서 하나의 데이타 항목을 저장하는 단위를 노드\(node\)라고 한다. 하나의 노드는 데이타 값과, 다음 항목이나 이전 항목을 가리키는 포인터로 구성된다.  4.트리  4.1.정의-대상 정보를 계층적으로 구조화시키고자 할 때 사용하는 자료구조가 "트리" 이다.  4.2.구조   -트리에는 하나의 루트\(root\) 노드가 있다.   -루트를 제외한 나머지 노드들은 서로 중복되지 않는 여러 개의 노드 집합으로 나뉘어진다.   -각각의 노드 집합들은 역시 트리가 된다. 5.해싱  5.1.정의-여러개의 명칭\(identifier\)들이 무작위로 들어있는 테이블에서 특정 명칭을 찾고자 하는 경우에 원하는 키값을 가지는 테이블 항목을 검색하기 위해 특정한 변환 함수를 이용하여 키값을 항목의 주소로 직접 바꿔서 검색하는 방법이다.  5.2.정적해싱   -조합 가능한 명칭들 중에 실제로 존재하는 명칭들의 수는 매우 적기 때문에 대부분의 공간은 낭비된다.   -명칭 테이블의 기억공간 낭비를 막기 위해 해시 테이블을 사용한다.   -해시 테이블은 b개의 버켓\(bucket\)으로 구성되고, 하나의 버켓은 s개의 슬롯\(slot\)으로 구성된다. 각각의 슬롯에는 명칭 테이블 항목처럼 하나의 명칭이 저장된다.  5.3.동적해싱   -항목과 삽입과 삭제가 빈번히 발생하는 응용에는 정적 해슁이 적합치 적합치 못하다. 고정된 크기의 해시 테이블을 사용하는 정적 해싱의 경우, 삽입이 많아지면 테이블이 가득차서 사용이 불가능하고 삭제가 많아지면 많은 공간이 사용되지 않으므로 낭비가 발생한다. 이러한 응용에 적합하도록 고안된 것이 동적 해싱\(dynamic hashing\) 또는 확장성 해싱\(extendible hashing\)이다.   -동적 해싱을 위해서 해시테이블 대신에 트라이\(trie\)라는 자료구조를 이용한다. |
+| :--- |
 
 

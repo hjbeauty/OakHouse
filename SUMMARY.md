@@ -31,6 +31,7 @@
   * [Simple example](greater-than-lambda/untitled-1.md)
 * [Utility](utility/README.md)
   * [Comparable vs Comparator](utility/comparable-vs-comparator.md)
+  * [System.arraycopy\(\) ,Object.clone\(\)](utility/system.arraycopy-object.clone.md)
   * [Sort , Search](utility/sort-search/README.md)
     * [Arrays.sort\(\) ,Collections.sort\(\)](utility/sort-search/arrays.sort-collections.sort.md)
     * [no Collections.sort\(\)](utility/sort-search/no-collections.sort.md)
