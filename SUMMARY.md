@@ -28,7 +28,7 @@
 * [\(\)-&gt; {}lambda](greater-than-lambda/README.md)
   * [What is Lambda?](greater-than-lambda/what-is-lambda.md)
   * [람다식의 장점/단점](greater-than-lambda/benefits-drawbacks.md)
-  * [Simple example](greater-than-lambda/untitled-1.md)
+  * [Simple example](greater-than-lambda/simple-example.md)
 * [Utility](utility/README.md)
   * [Comparable vs Comparator](utility/comparable-vs-comparator.md)
   * [System.arraycopy\(\) ,Object.clone\(\)](utility/system.arraycopy-object.clone.md)
