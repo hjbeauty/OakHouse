@@ -26,7 +26,7 @@
     * [Meta Annotations](annotation/annotations-provided-by-java/meta-annotations.md)
   * [Custom annotations](annotation/custom-annotations.md)
 * [\(\)-&gt; {}lambda](greater-than-lambda/README.md)
-  * [What is Lambda?](greater-than-lambda/untitled.md)
+  * [What is Lambda?](greater-than-lambda/what-is-lambda.md)
   * [람다식의 장점/단점](greater-than-lambda/benefits-drawbacks.md)
   * [Simple example](greater-than-lambda/untitled-1.md)
 * [Utility](utility/README.md)
