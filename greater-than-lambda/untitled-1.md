@@ -59,7 +59,7 @@ public class LambdaTest2 {
 
 ```
 
-## Thread run 호출 
+## Thread run\(\) 호출 
 
 ```java
 package lambda.bit;
@@ -92,7 +92,7 @@ class MyThread extends Thread {
 }
 ```
 
-## Runnable run 호
+## Runnable run\(\) 호출 
 
 ```java
 package lambda.bit;
