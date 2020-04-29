@@ -15,12 +15,12 @@
 ```bash
 @FunctionalInterface
 interface Say{
-    int someting(int a,int b);
+    int something(int a,int b);
 }
 //////////////////////////////////
 class Person{
     public void hi(Say line) {
-	int number = line.someting(3,4);
+	int number = line.something(3,4);
 	System.out.println("Number is "+number);
     }
 }
@@ -30,7 +30,7 @@ class Person{
 람다식 사용X #1
 
 Say say= new Say() {
-    public int someting(int a, int b) {
+    public int something(int a, int b) {
 	System.out.println("#1");
 	System.out.println("#2");
 	System.out.println("매개변수 number is "+a+","+b);
@@ -47,7 +47,7 @@ rin.hi(say);
 
 Person rin = new Person();
 rin.hi(new Say() {
-    public int someting(int a, int b) {
+    public int something(int a, int b) {
 	System.out.println("#1");
 	System.out.println("#2");
 	System.out.println("매개변수 number is "+a+","+b);
@@ -68,5 +68,141 @@ rin.hi((a,b) ->{
 });
 ```
 
+ 예제 전체 자바 파일 
 
+{% code title="Say.java" %}
+```java
+package sample.lambda;
+@FunctionalInterface
+public interface Say {
+	int something(int a,int b);
+	// @FunctionalInterface을 사용해서 메소드가 추가되면 에러발생
+	//int something2(int a,int b); 
+}
+
+```
+{% endcode %}
+
+{% code title="Person.java" %}
+```java
+package sample.lambda;
+
+public class Person {
+	public void hi(Say line) {
+		int number = line.something(3, 4);
+		System.out.println("Number is " + number);
+	}
+}
+
+```
+{% endcode %}
+
+{% code title="PersonUse.java" %}
+```java
+package sample.lambda;
+
+public class PersonUse {
+	public class 이름이있는Inner클래스 implements Say{
+		 public int something(int a, int b) {
+				System.out.println("매개변수 number is "+a+","+b);
+				return a+b;
+		}
+	}
+	public void lambadaNoUse() {
+		Say  say = new 이름이있는Inner클래스();
+		Person rin = new Person();
+		rin.hi(say);
+	}
+	public void lambadaNoUse1() {
+		Say say= 
+			new Say() {// 익명 inner 클래스의 인스턴스 생성문
+			    public int something(int a, int b) {
+				System.out.println("#1");
+				System.out.println("#2");
+				System.out.println("매개변수 number is "+a+","+b);
+				return 2020;
+		    }
+		};
+		Person rin = new Person();
+		rin.hi(say);
+	}
+	public void lambadaNoUse2() {
+		Person rin = new Person();
+		rin.hi(
+				new Say() {// 익명 inner 클래스의 인스턴스 생성문 , 
+					        // 재사용 불가 이유는 인스턴스를 참조하는 레퍼런스가 없어서
+				    public int something(int a, int b) {
+					System.out.println("#1");
+					System.out.println("#2");
+					System.out.println("매개변수 number is "+a+","+b);
+					return 2020;
+			    }
+			}	
+		);
+	}
+	public void lambadaUse1() {
+		Say say= 
+				/*new Say() {// 익명 inner 클래스의 인스턴스 생성문
+				    public int something*/(int a, int b)-> {
+					System.out.println("#1");
+					System.out.println("#2");
+					System.out.println("매개변수 number is "+a+","+b);
+					return 2020;
+			    }
+			/*}*/;
+			Person rin = new Person();
+			rin.hi(say);
+	}
+	public void lambadaUse2() {
+		Person rin = new Person();
+		rin.hi(
+				/*new Say() {// 익명 inner 클래스의 인스턴스 생성문 , 
+					        // 재사용 불가 이유는 인스턴스를 참조하는 레퍼런스가 없어서
+				    public int something*/(int a, int b)-> {
+					System.out.println("#1");
+					System.out.println("#2");
+					System.out.println("매개변수 number is "+a+","+b);
+					return 2020;
+			    }
+			/*}*/	
+		);
+	}
+	public void lambadaUse2_2() {
+		Person rin = new Person();
+		rin.hi(
+				/*new Say() {// 익명 inner 클래스의 인스턴스 생성문 , 
+					        // 재사용 불가 이유는 인스턴스를 참조하는 레퍼런스가 없어서
+				    public int something*/( a,  b)-> {
+					System.out.println("#1");
+					System.out.println("#2");
+					System.out.println("매개변수 number is "+a+","+b);
+					return 2020;
+			    }
+			/*}*/	
+		);
+	}
+	
+	public static void main(String[] args) {
+		PersonUse new_PersonUse인스턴스참조자=new PersonUse();
+		new_PersonUse인스턴스참조자.lambadaNoUse() ;
+		System.out.println("/////");
+		new_PersonUse인스턴스참조자.lambadaNoUse1() ;
+		System.out.println("/////");
+		new_PersonUse인스턴스참조자.lambadaNoUse2() ;
+		System.out.println("/////");
+		new_PersonUse인스턴스참조자.lambadaUse1() ;
+		System.out.println("/////");
+		new_PersonUse인스턴스참조자.lambadaUse2() ;
+	}
+
+}
+
+
+
+
+
+
+
+```
+{% endcode %}
 
