@@ -40,4 +40,9 @@
 
 * [JPA](spring/jpa.md)
 * [Rest API](spring/untitled-1.md)
+* [errors](spring/errors.md)
+
+## Spring Boot
+
+* [errors](spring-boot/errors.md)
 
