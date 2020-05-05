@@ -24,12 +24,6 @@
 
 ![](../../.gitbook/assets/spring-security.png)
 
-* `ApplicationContext`가 만들어지는 과정에서 `DefaultPasswordEncoderAuthenticationManagerBuilder`, `ProviderManager`, `DaoAuthenticationProvider`, 그리고 서블렛 필터 `UsernamePasswordAuthenticationFilter`가 만들어집니다. `WebSecurityConfigurerAdapter` 덕분이죠
-
-  이후 사용자가 `POST`로 로그인을 시도하면.. 위의 서블릿 필터를 통해 `ProviderManager.authenticate()`가 호출되고, 이어`DaoAuthenticationProvider`의 `retrieveUser()`와 `additionalAuthenticationChecks()`를 통해 `UserDetailsService.loadUserByUsername()`과 `PasswordEncoder.matches()`가 호출되어 로그인 정보를 확인합니다.
-
-  확인하여 이상이 없다면, 필터에서는 `UsernamePasswordAuthenticationToken`을 리턴받아 세션에 저장하고, 다시 `successfulAuthentication()`을 통해 `SecurityContext`에 저장하고, 사용자를 로그인 완료 페이지로 리다이렉트 시켜줍니다
-
 ### Spring Security  기본 인증방식 : 세션-쿠키방식
 
 > * 1번 http request  : 보호된 대상에 접근시도\(로그인\) 하는 사용자   
@@ -38,6 +32,9 @@
 > * 7번~10번 spring security의 세션들은 인메모리 세션저장소인 SecurityContextHolder 에 user의 정보를 저장
 > * 사용자에게 session ID를 담아서 response 한다
 > * 이후 사용자가 요청하면 쿠키에서 JSESSIONID를 찾아서 검증 후 유효하면 Authenticatione에 담는다.
+
+* WebSecurityConfigurerAdapter 에 의해 ApplicationContext가 생성시DefaultPasswordEncoder AuthenticationManagerBuilder, ProviderManager, DaoAuthenticationProvider, 그리고 서블렛 필터 UsernamePasswordAuthenticationFilter가 만들어진다. 
+*  사용자가 POST로 로그인을 시도하면.. 위의 서블릿 필터를 통해 ProviderManager.authenticate\(\)가 호출되고, 이어DaoAuthenticationProvider의 retrieveUser\(\)와 additionalAuthenticationChecks\(\)를 통해 UserDetailsService.loadUserByUsername\(\)과 PasswordEncoder.matches\(\)가 호출되어 로그인 정보를 확인합니다. 확인하여 이상이 없다면, 필터에서는 UsernamePasswordAuthenticationToken을 리턴받아 세션에 저장하고, 다시 successfulAuthentication\(\)을 통해 SecurityContext에 저장하고, 사용자를 로그인 완료 페이지로 리다이렉트 시켜줍니다
 
 > ###   **Authentication/ SecurityContext/ SecurityContextHolder 각 컴포넌트간의 관계**
 
