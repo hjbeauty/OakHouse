@@ -66,9 +66,10 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 ### 실행
 
 * [http://localhost:8080/](http://localhost:8080/)  
-* [http://localhost:8080](http://localhost:8080/)/아무거나 입력 
 
-![](../../.gitbook/assets/springboot-security-customlogin2_1%20%281%29.png)
+![](../../.gitbook/assets/springboot-security-customlogin2_2.png)
+
+{% file src="../../.gitbook/assets/2.springboot-security-simplelogin.zip" caption="2.springboot-security-simplelogin" %}
 
 
 
