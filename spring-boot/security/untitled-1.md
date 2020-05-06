@@ -4,7 +4,7 @@
 
 ### SpringBooSecurity3
 
- SpringBooSecurity2를 복사해서 사용한
+ SpringBooSecurity2를 복사해서 사용한다
 
 ### 파일수정  
 
