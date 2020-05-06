@@ -15,7 +15,7 @@ description: 처음하는 스프링 부트 시큐리티
 * 3번 : 서버실행 후
 * 4번 :  Using generated security password: 57dbd5fb-53f1-4df4-b186-eef96da5a3b9 부분이 출력된다.
 
-![](../../.gitbook/assets/springboot-security-newproject2.png)
+![STS &#xC791;&#xC5C5; &#xADF8;&#xB9BC;](../../.gitbook/assets/springboot-security-newproject2.png)
 
 * 1번 :  [http://localhost:8080/아무거나입력](http://localhost:8080/아무거나입력) 
 * 2번 :  [http://localhost:8080/login](http://localhost:8080/login)  화면으로 자동이동된다 
@@ -23,7 +23,7 @@ description: 처음하는 스프링 부트 시큐리티
 
 ![](../../.gitbook/assets/springboot-security-newproject3.png)
 
-
+{% file src="../../.gitbook/assets/0.springboot-security-nocontroller.zip" caption="실습파일" %}
 
 
 

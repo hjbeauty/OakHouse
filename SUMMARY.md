@@ -40,13 +40,14 @@
 
 * [JPA](spring/jpa.md)
 * [Rest API](spring/untitled-1.md)
-* [errors](spring/errors.md)
 
 ## Spring Boot
 
 * [Security](spring-boot/security/README.md)
   * [First Spring Boot Security](spring-boot/security/first-spring-boot-security.md)
-  * [Untitled](spring-boot/security/untitled-1.md)
-  * [Untitled](spring-boot/security/untitled.md)
+  * [Simple Custom Login Page\#1](spring-boot/security/untitled-2.md)
+  * [Simple Custom Login Page\#2](spring-boot/security/untitled-1.md)
+  * [Untitled](spring-boot/security/untitled/README.md)
+    * [Untitled](spring-boot/security/untitled/untitled-3.md)
 * [errors](spring-boot/errors.md)
 
