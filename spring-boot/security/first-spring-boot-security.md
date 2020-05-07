@@ -4,7 +4,7 @@ description: 처음하는 스프링 부트 시큐리티
 
 # First Spring Boot Security
 
-## Spring이 지원이하는 Security : 환경설정 추가없이 Login 화면 실행
+## Spring이 지원하는 Security : 환경설정 추가없이 Login 화면 실행
 
 * 신규 프로젝트 생성- SpringBooSecurity
 
