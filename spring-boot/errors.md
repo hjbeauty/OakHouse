@@ -24,7 +24,7 @@ description: Spring Boot 작업시 error 목록및 해결방법들을 적어 봅
 ```
 
 {% hint style="info" %}
-* 다음 처럼 scope이 test로 잡혀있다면 지우면 된
+* 다음 처럼 scope이 test로 잡혀있다면 지우면 된다  
 {% endhint %}
 
 ```markup
