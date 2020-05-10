@@ -1,4 +1,4 @@
-# Untitled
+# 실습예제
 
 {% file src="../../.gitbook/assets/10.springboot-security-thymeleaf-h2-baselogin.zip" caption="실습예제" %}
 
